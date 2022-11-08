@@ -21,41 +21,40 @@ hp：查看帮助文档
 ww
 
 ### 分屏设置
-sv（Split Vertically）：垂直分屏
-sd（Split Horizontally）：水平分屏，为了避免与调整窗口大小冲突，改为sb
-sc（Close）：关闭当前窗口
-so（Others）：关闭其他窗口
-Shift+w/a/s/d：上下左右窗口跳转
+- sv（Split Vertically）：垂直分屏
+- sd（Split Horizontally）：水平分屏，为了避免与调整窗口大小冲突，改为sb
+- sc（Close）：关闭当前窗口
+- so（Others）：关闭其他窗口
+- Shift+w/a/s/d：上下左右窗口跳转
 
 ### 调整各个窗口大小
-Ctrl+方向键：调整当前窗口大小
-或者
-sj：向下调整
-sk：向上调整
-sh：向左调整
-sl：向右调整
-s=：等比例
+- Ctrl+方向键：调整当前窗口大小
+- sj：向下调整
+- sk：向上调整
+- sh：向左调整
+- sl：向右调整
+- s=：等比例
 
 ### Terminal模式
-空格+t：在下方打开Terminal
-空格+vt：在右侧方打开Terminal
+空格+t：在下方打开Terminal  
+空格+vt：在右侧方打开Terminal  
 
 ### Visule模式
-j：下移文本
-k：上移文本
-<：左缩进文本,当然在normal模式下易可
-\>：右缩进文本,当然在normal模式下易可
-Shift+j：选中文本向下移动
-Shift+k：选中文本向上移动
+j：下移文本  
+k：上移文本  
+<：左缩进文本,当然在normal模式下易可  
+\>：右缩进文本,当然在normal模式下易可  
+Shift+j：选中文本向下移动  
+Shift+k：选中文本向上移动  
 
 ### 浏览查看
-Ctrl+j/k：向下或向上移动四行
-Ctrl+d/u（down or up）：向下或向上移动九行
+Ctrl+j/k：向下或向上移动四行  
+Ctrl+d/u（down or up）：向下或向上移动九行  
 
 ### 格式化
-Ctrl+i 
-zz：折叠代码块
-z：打开折叠代码块
+Ctrl+i  
+zz：折叠代码块  
+z：打开折叠代码块  
 
 ### 插件配置
 #### nvim-tree

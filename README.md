@@ -15,7 +15,7 @@
 ### 终极设置
 空格键：normal模式输入: *leader键*  
 Alt+j：三种模式下关闭当前模式  
-hp：查看帮助文档  
+Ctrl+h：查看帮助文档  
 
 ### 保存文件
 ww
@@ -36,8 +36,8 @@ ww
 - s=：等比例
 
 ### Terminal模式
-空格+t：在下方打开Terminal  
-空格+vt：在右侧方打开Terminal  
+空格+vt：在下方打开Terminal  
+空格+t：在右侧方打开Terminal  
 
 ### Visule模式
 j：下移文本  

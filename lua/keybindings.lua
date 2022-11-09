@@ -44,10 +44,10 @@ map('n', '<leader>', ':', opt)
 map('i', '<A-j>', '<Esc>', opt)
 map('v', '<A-j>', '<Esc>', opt)
 map('t', '<A-j>', ':tnoremap <Esc> <C-\\><C-n>:q!<CR>', opt)
-map('n', 'hp', ':edit ~/Documents/markdown文档/Neovim配置.md<CR>', opt)
+map('n', '<A-h>', ':edit ~/Documents/markdown文档/Neovim配置.md<CR>', opt)
 -- 保存文件
 map('n', 'ww', ':w<CR>', opt)
-map('n', '<S-t>', ':NvimTreeOpen<CR>',opt)
+map('n', '<S-t>', ':NvimTreeOpen<CR>', opt)
 ---------------
 -- 分屏快捷键设置
 ---------------
@@ -97,9 +97,9 @@ map('n', 's=', '<C-w>=', opt)
 
 -- Terminal相关
 -- 在下方打开Terminal
-map('n', '<leader>t', ':sp | terminal<CR>', opt)
+map('n', '<leader>vt', ':sp | terminal<CR>', opt)
 -- 在侧方打开Terminal
-map('n', '<leader>vt', ':vsp | terminal<CR>', opt)
+map('n', '<leader>t', ':vsp | terminal<CR>', opt)
 -- 在Terminal模式中Esc关闭Terminal模式
 -- map("t", "<Esc>", "<C-\\><C-n>", opt)
 -- map("t", "<A-h>", [[ <C-\><C-N><C-w>h ]], opt)

@@ -79,7 +79,7 @@ Ctrl+h：向左切换Tab
 Ctrl+l：享有切换Tab  
 
 #### telescope
-Ctrl+s/w：上下移动选项  
+Alt+j/k：上下移动选项  
 上下键：上下移动选项  
 Ctrl+c：关闭窗口  
 

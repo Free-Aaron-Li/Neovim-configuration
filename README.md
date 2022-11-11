@@ -2,6 +2,42 @@
 ---
 # Neovim配置
 ## 基础配置
+.
+├── init.lua
+├── License
+├── lua
+│   ├── basic.lua
+│   ├── colorscheme.lua
+│   ├── keybindings.lua
+│   ├── lsp
+│   │   ├── cmp.lua
+│   │   ├── config
+│   │   │   ├── c.lua
+│   │   │   ├── css.lua
+│   │   │   ├── html.lua
+│   │   │   ├── java.lua
+│   │   │   ├── json.lua
+│   │   │   ├── lua.lua
+│   │   │   └── ts.lua
+│   │   ├── formatter.lua
+│   │   ├── null-ls.lua
+│   │   ├── setup.lua
+│   │   └── ui.lua
+│   ├── plugin-config
+│   │   ├── bufferline.lua
+│   │   ├── comment.lua
+│   │   ├── dashboard.lua
+│   │   ├── indent-blankline.lua
+│   │   ├── lualine.lua
+│   │   ├── nvim-autopairs.lua
+│   │   ├── nvim-tree.lua
+│   │   ├── nvim-treesitter.lua
+│   │   ├── project.lua
+│   │   └── telescope.lua
+│   └── plugins.lua
+├── plugin
+│   └── packer_compiled.lua
+└── README.md
 ## 详细配置解释
 - basic.lua： 基础配置，是对默认配置的一个重置。
 - colorscheme.lua： 我们安装的主题皮肤配置，在这里切换主题。

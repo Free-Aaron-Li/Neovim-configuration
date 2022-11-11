@@ -42,7 +42,7 @@
 ]]
 --
 
-local packer = require("packer")
+local packer = require('packer')
 packer.startup({
   function(use)
     --[[
@@ -52,7 +52,7 @@ packer.startup({
     ]]
     --
     -- Packer 用于管理插件
-    use("wbthomason/packer.nvim")
+    use('wbthomason/packer.nvim')
 
     -------------插件列表-------------
     --                              --
@@ -71,7 +71,7 @@ packer.startup({
     -- 背景色：蓝黑色偏淡紫色 RGB：#24283b
     -- 该主题移植于VScode TokyoNight theme。
     -- github 1.3k+ 星星
-    use("folke/tokyonight.nvim")
+    use('folke/tokyonight.nvim')
     ----------------------------------
     -- 主题二：OceanicNext
     -- 背景色：深绿色 RGB：#1b2c34
@@ -81,7 +81,7 @@ packer.startup({
       github 1k+ 星星
       ]]
     --
-    use("mhartington/oceanic-next")
+    use('mhartington/oceanic-next')
     ----------------------------------
     -- 主题三：gruvbox
     -- 背景色：棕黑色 RGB：#282828
@@ -89,7 +89,7 @@ packer.startup({
       gruvbox是非常著名的配色gruvbox community的Lua移植版，支持treesitter。
     ]]
     --
-    use({ "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } })
+    use({ 'ellisonleao/gruvbox.nvim', requires = { 'rktjmp/lush.nvim' } })
     ----------------------------------
     -- 主题四：zephyr
     -- 背景色：黑色 RGB：#282a37
@@ -100,7 +100,7 @@ packer.startup({
       github 200+ 星星
     ]]
     --
-    use("glepnir/zephyr-nvim")
+    use('glepnir/zephyr-nvim')
     ----------------------------------
     -- 主题五：nord
     -- 背景色：黑色 RGB：#2e333f
@@ -108,12 +108,12 @@ packer.startup({
       主题配色为现代化的配色，同时支持非常多的插件。整体观感偏素。
     ]]
     --
-    use("shaunsingh/nord.nvim")
+    use('shaunsingh/nord.nvim')
     ----------------------------------
     -- 主题六：onedark
     -- 背景色：黑色 RGB：#292c34
     -- 经典主题，支持许多插件，支持Treesitter和LSP
-    use("ful1e5/onedark.nvim")
+    use('ful1e5/onedark.nvim')
     ----------------------------------
     -- 主题七：nightfox
     -- 背景色：黑色 RGB：#1a2330
@@ -123,7 +123,7 @@ packer.startup({
       github 600+ 星星
     ]]
     --
-    use("EdenEast/nightfox.nvim")
+    use('EdenEast/nightfox.nvim')
     ----------------------------------
     --                              --
     --                              --
@@ -134,45 +134,44 @@ packer.startup({
     ]]
     --
     use({
-      "kyazdani42/nvim-tree.lua",
-      requires = "kyazdani42/nvim-web-devicons", -- 文件图标
+      'kyazdani42/nvim-tree.lua',
+      requires = 'kyazdani42/nvim-web-devicons', -- 文件图标
     })
-    use("ahmedkhalf/project.nvim") --[[使得nvim-tree支持切换目录]] --
     ----------------------------------
     -- 插件二：bufferline：Tab页面
     use({
-      "akinsho/bufferline.nvim",
+      'akinsho/bufferline.nvim',
       requires = { -- 依赖项
-        "kyazdani42/nvim-web-devicons", --[[ 图标 ]] --
-        "moll/vim-bbye", --[[解决关闭当前buffer时导致的窗口关闭以及布局混乱等问题]] --
+        'kyazdani42/nvim-web-devicons', --[[ 图标 ]] --
+        'moll/vim-bbye', --[[解决关闭当前buffer时导致的窗口关闭以及布局混乱等问题]] --
       },
     })
     ----------------------------------
     -- 插件三：lualine：底部状态栏
     use({
-      "nvim-lualine/lualine.nvim",
+      'nvim-lualine/lualine.nvim',
       requires = {
-        "kyazdani42/nvim-web-devicons", --[[ 图标 ]] --
+        'kyazdani42/nvim-web-devicons', --[[ 图标 ]] --
       },
     })
-    use("arkav/lualine-lsp-progress") --[[ lualine扩展 ]] --
+    use('arkav/lualine-lsp-progress') --[[ lualine扩展 ]] --
     ----------------------------------
     -- 插件四：telescope：模糊查询
     use({
-      "nvim-telescope/telescope.nvim",
+      'nvim-telescope/telescope.nvim',
       requires = {
-        "nvim-lua/plenary.nvim", --[[ 所有lua函数只用写一次。(⊙v⊙)嗯，好吧我也没明白什么意思。github原文：All the lua functions I don't want to write twice.]] --
+        'nvim-lua/plenary.nvim', --[[ 所有lua函数只用写一次。(⊙v⊙)嗯，好吧我也没明白什么意思。github原文：All the lua functions I don't want to write twice.]] --
       },
     })
-    use("LinArcX/telescope-env.nvim") --[[ telescope插件扩展，用于列出系统环境变量 ]] --
+    use('LinArcX/telescope-env.nvim') --[[ telescope插件扩展，用于列出系统环境变量 ]] --
     ----------------------------------
     -- 插件五：dashboard-nvim：启动画面
-    use("glepnir/dashboard-nvim")
+    use('glepnir/dashboard-nvim')
     ----------------------------------
     -- 插件六：nvim-treesitter：代码高亮及语法树
     use({
-      "nvim-treesitter/nvim-treesitter",
-      run = ":TSUpdate", --[[这个命令是Packer.nvim中的一个Post-install hook，表示当组件安装或更新时会执行:TSUpdate命令 ]] --
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate', --[[这个命令是Packer.nvim中的一个Post-install hook，表示当组件安装或更新时会执行:TSUpdate命令 ]] --
       --[[ 该命令执行原因是：特定的nvim-treesitter插件版本只与特定的language parser（语言解释器）版本匹配，
         当我们更新插件时，也必须更新所有已经安装了的语言解释器。
         ]]
@@ -180,20 +179,20 @@ packer.startup({
     })
     ----------------------------------
     -- 插件五：nvim-lspconfig：提供服务配置
-    use({ "neovim/nvim-lspconfig" })
+    use({ 'neovim/nvim-lspconfig' })
     ----------------------------------
     -- 插件六：nvim-lsp-installer：安装语言服务器
     -- 插件已经停止服务，更换为mason.nvim
-    use("williamboman/nvim-lsp-installer")
+    use('williamboman/nvim-lsp-installer')
     ----------------------------------
     -- 插件七：mason.nvim：提供安装LSP server服务
-    use({ "williamboman/mason.nvim" })
+    use({ 'williamboman/mason.nvim' })
     ----------------------------------
     -- 插件八：mason-lspconfig：提供服务
-    use({ "williamboman/mason-lspconfig.nvim" })
+    use({ 'williamboman/mason-lspconfig.nvim' })
     ----------------------------------
     -- 插件九：nvim-dap：mason依赖插件
-    use({ "mfussenegger/nvim-dap" })
+    use({ 'mfussenegger/nvim-dap' })
     ----------------------------------
     -- 插件十：null-ls.nvim：mason依赖插件
     -- use({ "jose-elias-alvarez/null-ls.nvim" })
@@ -201,47 +200,51 @@ packer.startup({
     -- 插件十一：补全
     -- 补全引擎：cmp
     -- 为Neovim提供代码补全全核心功能
-    use("hrsh7th/nvim-cmp")
+    use('hrsh7th/nvim-cmp')
     -- 补全引擎：snippet
     -- 自定义代码段引擎
-    use("hrsh7th/vim-vsnip")
+    use('hrsh7th/vim-vsnip')
     -- 补全源
-    use("hrsh7th/cmp-vsnip")
-    use("hrsh7th/cmp-nvim-lsp") --[[ { name = nvim_lsp }  Neovim内置LSP提供的补全内容 ]] --
-    use("hrsh7th/cmp-buffer") --[[ { name = 'buffer' }, 补全当前buffer内容 ]] --
-    use("hrsh7th/cmp-path") --[[ { name = 'path' } 路径补全 ]] --
-    use("hrsh7th/cmp-cmdline") --[[ { name = 'cmdline' } 命令行补全 ]] --
+    use('hrsh7th/cmp-vsnip')
+    use('hrsh7th/cmp-nvim-lsp') --[[ { name = nvim_lsp }  Neovim内置LSP提供的补全内容 ]] --
+    use('hrsh7th/cmp-buffer') --[[ { name = 'buffer' }, 补全当前buffer内容 ]] --
+    use('hrsh7th/cmp-path') --[[ { name = 'path' } 路径补全 ]] --
+    use('hrsh7th/cmp-cmdline') --[[ { name = 'cmdline' } 命令行补全 ]] --
     --[[ 常见语言代码段 包含大部分常用语言的代码段，非常强大。 ]]
     --
-    use("rafamadriz/friendly-snippets")
+    use('rafamadriz/friendly-snippets')
     ----------------------------------
     -- 插件十二：美化
     --[[ 插件1：lspkind-nvim：提供小图标。用于代码补全作为图标 ]]
     --
-    use("onsails/lspkind-nvim")
+    use('onsails/lspkind-nvim')
     --[[ 插件2：indent-blankline.nvim：代码间产生联系竖线 ]]
     --
-    use("lukas-reineke/indent-blankline.nvim")
+    use('lukas-reineke/indent-blankline.nvim')
     -- 插件3：lspsaga
-    use("tami5/lspsaga.nvim")
+    use('tami5/lspsaga.nvim')
     ----------------------------------
     -- 插件十三：formatter.nvim：代码格式化
-    use("mhartington/formatter.nvim")
+    use('mhartington/formatter.nvim')
     ----------------------------------
     -- 插件十四：null-ls.nvim：代码格式化
-    use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
+    use({ 'jose-elias-alvarez/null-ls.nvim', requires = 'nvim-lua/plenary.nvim' })
     ----------------------------------
     -- 插件十五：schemastore.nvim JSON增强
-    use("b0o/schemastore.nvim")
+    use('b0o/schemastore.nvim')
     ----------------------------------
     -- 插件十六：TypeScript增强
-    use({ "jose-elias-alvarez/nvim-lsp-ts-utils", requires = "nvim-lua/plenary.nvim" })
+    use({ 'jose-elias-alvarez/nvim-lsp-ts-utils', requires = 'nvim-lua/plenary.nvim' })
     ----------------------------------
     -- 插件十七：自动补全括号
-    use("windwp/nvim-autopairs")
+    use('windwp/nvim-autopairs')
     ----------------------------------
     -- 插件十八：快速注释代码
-    use("numToStr/Comment.nvim")
+    use('numToStr/Comment.nvim')
+    ----------------------------------
+    -- 插件十九：项目管理
+    -- 同时使nvim-tree支持项目切换
+    use('ahmedkhalf/project.nvim')
     ----------------------------------
     --                              --
     --                              --
@@ -260,19 +263,22 @@ packer.startup({
     -- 自定义源
     git = {
       -- 代理网址
-      -- default_url_format = "https://github.do/%s",
+      -- default_url_format = 'https://github.do/%s',
       -- default_url_format = "https://gitclone.com/%s",
-      -- default_url_format = "https://gitclone.com/%s",
-      -- default_url_format = "https://ghproxy.com/%s",
+      -- default_url_format = 'https://gitclone.com/%s',
+      -- default_url_format = 'https://ghproxy.com/%s',
       -- 该代理站点还不错 o(￣▽￣)d
-      default_url_format = "https://hub.0z.gs/%s",
+      -- default_url_format = 'https://hub.0z.gs/%s',
+      --default_url_format = 'https://github.com.cnpmjs.org/',
+      -- default_url_format = 'https://hub.fastgit.org/',
+      -- default_url_format = 'https://github.wuyanzheshui.workers.dev/',
     },
     ----------
     -- 以浮动窗口打开安装列表
     ----------
     display = {
       open_fn = function()
-        return require("packer.util").float({ border = "single" })
+        return require('packer.util').float({ border = 'single' })
       end,
     },
   },

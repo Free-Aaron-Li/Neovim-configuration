@@ -13,25 +13,25 @@
 -- 基础设置
 ---------------
 
-require("basic")
+require('basic')
 
 ---------------
 -- 快捷键设置
 -- -------------
 
-require("keybindings")
+require('keybindings')
 
 ---------------
 -- 插件配置
 ---------------
 
-require("plugins")
+require('plugins')
 
 ---------------
 -- 主题设置
 ---------------
 
-require("colorscheme")
+require('colorscheme')
 
 ---------------插件配置---------------
 
@@ -39,76 +39,76 @@ require("colorscheme")
 -- nvim-tree配置
 ---------------
 
-require("plugin-config.nvim-tree")
+require('plugin-config.nvim-tree')
 
 ---------------
 -- bufferline配置
 ---------------
 
-require("plugin-config.bufferline")
+require('plugin-config.bufferline')
 
 ---------------
 -- lualine配置
 ---------------
 
-require("plugin-config.lualine")
+require('plugin-config.lualine')
 
 ---------------
 -- telescope配置
 ---------------
 
-require("plugin-config.telescope")
+require('plugin-config.telescope')
 
 ---------------
 -- dashboard配置
 ---------------
 
-require("plugin-config.dashboard")
+require('plugin-config.dashboard')
 
 ---------------
 -- project配置
 ---------------
 
-require("plugin-config.project")
+require('plugin-config.project')
 
 ---------------
 -- nvim-treesitter配置
 ---------------
 
-require("plugin-config.nvim-treesitter")
+require('plugin-config.nvim-treesitter')
 
 ---------------
 -- LSP配置
 ---------------
 
-require("lsp.setup")
-require("lsp.cmp")
+require('lsp.setup')
+require('lsp.cmp')
 
 ---------------
 -- UI配置
 ---------------
 
-require("lsp.ui")
-require("plugin-config.indent-blankline")
+require('lsp.ui')
+require('plugin-config.indent-blankline')
 
 ---------------
 -- 代码格式化
 ---------------
 
-require("lsp.formatter")
+require('lsp.formatter')
 --- require("lsp.null-ls")
 
 ---------------
 -- 自动生成括号
 ---------------
 
-require("plugin-config.nvim-autopairs")
+require('plugin-config.nvim-autopairs')
 
 ---------------
 -- 注释
 ---------------
 
-require("plugin-config.comment")
+require('plugin-config.comment')
 ----------------------------------
 ---------------
 -- 结束

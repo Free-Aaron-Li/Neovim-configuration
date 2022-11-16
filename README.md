@@ -2,7 +2,6 @@
 ---
 # Neovim配置
 ## 基础配置
-.
 ├── init.lua  
 ├── License  
 ├── lua  

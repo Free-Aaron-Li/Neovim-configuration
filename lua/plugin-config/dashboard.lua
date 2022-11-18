@@ -67,7 +67,7 @@ dashboard.custom_center = {
   {
     icon = "       ",
     desc = "帮助文档     ",
-    action = "edit ~/Documents/markdown文档/Neovim配置.md",
+    action = "edit ~/.config/nvim/README.md",
   },
 }
 

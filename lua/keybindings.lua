@@ -44,7 +44,8 @@ map('n', '<leader>', ':', opt)
 map('i', '<A-j>', '<Esc>', opt)
 map('v', '<A-j>', '<Esc>', opt)
 map('t', '<A-j>', ':tnoremap <Esc> <C-\\><C-n>:q!<CR>', opt)
-map('n', '<A-h>', ':edit ~/Documents/markdown文档/Neovim配置.md<CR>', opt)
+-- 查看帮助文档
+map('n', '<A-h>', ':edit ~/.config/nvim/README.md<CR>', opt)
 -- 保存文件
 map('n', 'ww', ':w<CR>', opt)
 map('n', '<S-t>', ':NvimTreeOpen<CR>', opt)

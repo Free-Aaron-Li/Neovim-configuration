@@ -129,6 +129,13 @@ Alt+j：取消补全
 Ctrl+j/k：上下移动选项  
 Enter：确认  
 
+#### Easy-Motion
+<leader><leader>+w 向下跳转单词
+<leader><leader>+b 向上跳转单词
+<leader><leader>+j 向下跳转行
+<leader><leader>+k 向上跳转行
+<leader><leader>+f 全局查找跳转单词
+
 #### comment
 
 ##### normal模式下

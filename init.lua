@@ -95,8 +95,8 @@ require('plugin-config.indent-blankline')
 -- 代码格式化
 ---------------
 
-require('lsp.formatter')
---- require("lsp.null-ls")
+-- require('lsp.formatter')
+require("lsp.null-ls")
 
 ---------------
 -- 自动生成括号

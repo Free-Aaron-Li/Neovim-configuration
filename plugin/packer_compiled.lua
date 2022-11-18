@@ -114,11 +114,6 @@ _G.packer_plugins = {
     path = "/home/AaronLi/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "git@github.com:glepnir/dashboard-nvim"
   },
-  ["formatter.nvim"] = {
-    loaded = true,
-    path = "/home/AaronLi/.local/share/nvim/site/pack/packer/start/formatter.nvim",
-    url = "git@github.com:mhartington/formatter.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/AaronLi/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -243,6 +238,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/AaronLi/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "git@github.com:moll/vim-bbye"
+  },
+  ["vim-easymotion"] = {
+    loaded = true,
+    path = "/home/AaronLi/.local/share/nvim/site/pack/packer/start/vim-easymotion",
+    url = "git@github.com:easymotion/vim-easymotion"
   },
   ["vim-vsnip"] = {
     loaded = true,

@@ -225,7 +225,8 @@ packer.startup({
         use('tami5/lspsaga.nvim')
         ----------------------------------
         -- 插件十三：formatter.nvim：代码格式化
-        use('mhartington/formatter.nvim')
+        -- 使用null-ls插件代替formatter
+        -- use('mhartington/formatter.nvim')
         ----------------------------------
         -- 插件十四：null-ls.nvim：代码格式化
         use({ 'jose-elias-alvarez/null-ls.nvim', requires = 'nvim-lua/plenary.nvim' })
@@ -245,6 +246,9 @@ packer.startup({
         -- 插件十九：项目管理
         -- 同时使nvim-tree支持项目切换
         use('ahmedkhalf/project.nvim')
+        ----------------------------------
+        -- 插件二十：快速移动
+        use('easymotion/vim-easymotion')
         ----------------------------------
         --                              --
         --                              --
@@ -296,7 +300,7 @@ packer.startup({
   每次打开一个文件就执行一次:z命令
   ]]
 --
-pcall(
+--[[ pcall(
     vim.cmd,
     [[
   augroup fold_fix
@@ -304,8 +308,8 @@ pcall(
   autocmd BufRead * autocmd BufWinEnter * ++once normal! zx zR
   augroup end
 ]]
-)
-
+-- )
+-- ]]
 ---------------
 -- 结束
 ---------------

@@ -1,39 +1,39 @@
 # Neovim-configuration
 ---
 # Neovim配置
-├── init.lua
-├── License
-├── lua
-│   ├── basic.lua
-│   ├── colorscheme.lua
-│   ├── keybindings.lua
-│   ├── lsp
-│   │   ├── cmp.lua
-│   │   ├── config
-│   │   │   ├── c.lua
-│   │   │   ├── css.lua
-│   │   │   ├── html.lua
-│   │   │   ├── java.lua
-│   │   │   ├── json.lua
-│   │   │   ├── lua.lua
-│   │   │   └── ts.lua
-│   │   ├── null-ls.lua
-│   │   ├── setup.lua
-│   │   └── ui.lua
-│   ├── plugin-config
-│   │   ├── bufferline.lua
-│   │   ├── comment.lua
-│   │   ├── dashboard.lua
-│   │   ├── indent-blankline.lua
-│   │   ├── lualine.lua
-│   │   ├── nvim-autopairs.lua
-│   │   ├── nvim-tree.lua
-│   │   ├── nvim-treesitter.lua
-│   │   ├── project.lua
-│   │   └── telescope.lua
-│   └── plugins.lua
-├── plugin
-│   └── packer_compiled.lua
+├── init.lua  
+├── License  
+├── lua  
+│   ├── basic.lua  
+│   ├── colorscheme.lua  
+│   ├── keybindings.lua  
+│   ├── lsp  
+│   │   ├── cmp.lua  
+│   │   ├── config  
+│   │   │   ├── c.lua  
+│   │   │   ├── css.lua  
+│   │   │   ├── html.lua  
+│   │   │   ├── java.lua  
+│   │   │   ├── json.lua  
+│   │   │   ├── lua.lua  
+│   │   │   └── ts.lua  
+│   │   ├── null-ls.lua  
+│   │   ├── setup.lua  
+│   │   └── ui.lua  
+│   ├── plugin-config  
+│   │   ├── bufferline.lua  
+│   │   ├── comment.lua  
+│   │   ├── dashboard.lua  
+│   │   ├── indent-blankline.lua  
+│   │   ├── lualine.lua  
+│   │   ├── nvim-autopairs.lua  
+│   │   ├── nvim-tree.lua  
+│   │   ├── nvim-treesitter.lua  
+│   │   ├── project.lua  
+│   │   └── telescope.lua  
+│   └── plugins.lua  
+├── plugin  
+│   └── packer_compiled.lua  
 └── README.md
 ## 基础配置
 ## 详细配置解释

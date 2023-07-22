@@ -6,7 +6,8 @@ return{
         dependencies={
             -- 额外补充插件
             -- https://github.com/utilyre/barbecue.nvim
-            -- 行首标签
+            -- 页眉展示
+            -- 展示当前文件位置、函数位置等
             {
                 "utilyre/barbecue.nvim",
                 dependencies={

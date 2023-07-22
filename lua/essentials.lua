@@ -285,20 +285,37 @@ keymap.set("n","<leader>w,","<C-w><",opt)
 -- 将当前窗口的宽度调至最大
 keymap.set("n","<leader>w\\","<C-w>|",opt)
 
+-- 4. 单词纠错
+-- 需要插件“'kamykn/spelunker.vim”
+-- 通过建议列表纠正单词
+vim.cmd([[nmap wl ZL]])
+-- 通过插入纠正单词
+vim.cmd([[nmap wc Zc]])
+-- 通过插入建议列表首项纠正单词
+vim.cmd([[nmap wf Zf]])
+-- 将“错误单词”加入字典
+vim.cmd([[nmap wg Zg]])
 
--- telescope插件配置
+-- 5. nvim-tree
 --
--- require('telescope').load_extension('fzf')
--- local builtin=require('telescope.builtin')
--- 查找项目
--- keymap.set("n","<C-p>", builtin.project,opt)
--- 查找文件
--- keymap.set("n", "<C-n>", builtin.find_files, opt)
--- 全局搜索
--- keymap.set("n", "<C-f>", builtin.live_grep, opt)
--- 环境变量查找
--- keymap.set("n","<C-e>",builtin.env,opt)
-
+-- 1. 打开文件或文件夹
+-- <CR> / o
+-- 2. 分屏打开文件
+-- v(vsplit) / h(split)
+-- 3. 显示隐藏文件
+-- 对应 filters 中的 custom (node_modules)
+-- i
+-- 隐藏点文件（隐藏文件）
+-- .
+-- 4. 文件操作
+-- <F5> 刷新
+-- a    创建文件
+-- d    删除文件
+-- r    重命名文件
+-- x    剪切文件
+-- c    复制文件
+-- p    粘贴文件
+-- s    以系统默认方式打开文件
 
 -----------------------------------------------------------------------
 

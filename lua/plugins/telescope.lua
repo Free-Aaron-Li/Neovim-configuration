@@ -61,10 +61,15 @@ return{
             require('telescope').load_extension('fzf')
             -- 打开telescope快捷键
             local builtin = require('telescope.builtin')
+            -- 查找文件 
             vim.keymap.set('n', '<leader><leader>ff', builtin.find_files, {desc = '[S]earch [F]iles'})
+            -- 全局查找
             vim.keymap.set('n', '<leader><leader>fl', builtin.live_grep, {desc = '[S]earch by [G]rep'})
+            -- buffer检索
             vim.keymap.set('n', '<leader><leader>fb', builtin.buffers, {desc = '[ ] Find existing buffers'})
+            -- 查找历史文件
             vim.keymap.set('n', '<leader><leader>fo', builtin.oldfiles, {desc = '[?] Find recently opened files'})
+            -- 当前目录下内容查找
             vim.keymap.set('n', '<leader><leader>/', function()
                 -- You can pass additional configuration to telescope to change theme, layout, etc.
                 require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {

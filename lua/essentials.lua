@@ -219,7 +219,7 @@ keymap.set("n","<leader>ws","<C-w>s",opt)
 keymap.set("n","<leader>wv","<C-w>v",opt)
 --
 --
-- 3.2 关闭与离开窗口
+-- 3.2 关闭与离开窗口
 -- 关闭当前窗口
 keymap.set("n","<leader>wc","<C-w>c",opt)
 -- 离开当前窗口

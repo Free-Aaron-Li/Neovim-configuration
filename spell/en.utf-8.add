@@ -58,3 +58,15 @@ augroup
 cterm
 vimdoc
 quickstart
+keymap
+nofile
+autocmd
+ctermfg
+guifg
+devicons
+dotfiles
+winnr
+bufname
+tabpagenr
+textobject
+echasnovski

@@ -27,6 +27,7 @@ option.showmode=false
 global.encoding = "UTF-8"
 -- 文件编码
 global.fileencoding = 'utf-8'
+global.fileencodings={'utf-8','ucs-bom','chinese'}
 
 -- jkhl 移动时光标周围保留8行
 option.scrolloff = 8
@@ -200,7 +201,7 @@ keymap.set("n","<C-l>",":BufferLineCycleNext<CR>",opt)
 -- 
 --
 -- 2.2 关闭buffer
-keymap.set("n","ww",":w<bar>:Bdelete!<CR>",opt)
+keymap.set("n","wq",":w<bar>:Bdelete!<CR>",opt)
 -- 关闭左标签
 keymap.set("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
 -- 关闭右标签
@@ -237,7 +238,7 @@ keymap.set("n","<leader>wh","<C-w>h",opt)
 keymap.set("n","<leader>wl","<C-w>l",opt)
 --
 -- 3.3.2 窗口中循环移动
-keymap.set("n","<leader>ww","<C-w>w",opt)
+keymap.set("n","<leader>wm","<C-w>w",opt)
 --
 -- 3.3.3 对角移动
 -- 移动到最左上角窗口

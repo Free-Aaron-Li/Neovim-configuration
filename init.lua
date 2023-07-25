@@ -8,3 +8,8 @@ require('essentials')
 -- 插件管理
 --
 require('lazy_nvim')
+
+-- 
+-- gui
+--
+require('gui')

@@ -258,4 +258,21 @@ return{
             )
         end,
     },
+    {
+        'wakatime/vim-wakatime',
+        config=function()
+        end,
+    },
+    {
+        -- https://github.com/iamcco/markdown-preview.nvim
+        -- markdown预览
+        "iamcco/markdown-preview.nvim",
+        dependencies={
+            'iamcco/mathjax-support-for-mkdp',
+        },
+        ft = "markdown",
+        build = function()
+            vim.fn["mkdp#util#install"]()
+        end,
+    },
 }

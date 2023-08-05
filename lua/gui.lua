@@ -1,10 +1,11 @@
 if vim.g.neovide then
 
-    vim.o.guifont = "JetBrainsMono Nerd Font:h13"
-    vim.g.neovide_transparency = 1 -- 透明度
+    -- vim.o.guifont = "JetBrainsMono Nerd Font:h13"
+    vim.o.guifont = "Monaco Nerd Font:h13"
+    vim.g.neovide_transparency = 0.97 -- 透明度
     vim.g.neovide_hide_mouse_when_typing = true -- 打字时隐藏鼠标
     vim.g.neovide_confirm_quit = true -- 退出需要确认 
-    vim.g.neovide_fullscreen = true -- 是否全屏
+    vim.g.neovide_fullscreen = false -- 是否全屏
     vim.g.neovide_remember_window_size = true -- 记住以前窗口的大小
     -- 使用super键位,比如<cmd>
     -- vim.g.neovide_input_use_logo = true

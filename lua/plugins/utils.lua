@@ -1,6 +1,5 @@
 return{
-    {
-        -- https://github.com/rhysd/accelerated-jk
+    { -- https://github.com/rhysd/accelerated-jk
         -- 随下拉（上拉）时间加快下滑（上滑）速度
         'rhysd/accelerated-jk',
         config=function()
@@ -264,15 +263,32 @@ return{
         end,
     },
     {
-        -- https://github.com/iamcco/markdown-preview.nvim
-        -- markdown预览
         "iamcco/markdown-preview.nvim",
-        dependencies={
-            'iamcco/mathjax-support-for-mkdp',
-        },
-        ft = "markdown",
-        build = function()
-            vim.fn["mkdp#util#install"]()
+        build = "cd app && npm install",
+        ft = { "markdown" },
+        config=function()
+            vim.g.mkdp_filetypes = { "markdown" }
+            -- set default theme (dark or light)
+            -- By default the theme is define according to the preferences of the system
+            vim.g.mkdp_theme='light'
+            -- specify browser to open preview page
+            -- for path with space
+            -- valid: `/path/with\ space/xxx`
+            -- invalid: `/path/with\\ space/xxx`
+            -- default: ''
+            vim.g.mkdp_browser = '/home/aaron/Software/firefox/firefox-bin'
         end,
+    },
+    {
+        -- https://github.com/dhruvasagar/vim-table-mode
+        -- 表格预览
+        "dhruvasagar/vim-table-mode",
+        -- ft = "markdown",
+    },
+    {
+        -- https://github.com/img-paste-devs/img-paste.vim
+        -- 从剪贴板插入图片
+        "ferrine/md-img-paste.vim",
+        -- ft = "markdown",
     },
 }

@@ -8,6 +8,8 @@ return{
             'nvim-treesitter/playground',
             -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
             'nvim-treesitter/nvim-treesitter-textobjects',
+            -- https://github.com/tree-sitter/tree-sitter
+            -- 'tree-sitter/tree-sitter',
         },
         main='nvim-treesitter.configs',
         build=':TSUpdate',

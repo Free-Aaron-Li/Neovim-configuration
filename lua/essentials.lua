@@ -4,10 +4,7 @@
 -- vim.g.{name} 全局变量
 -- vim.b.{name} 缓冲区变量
 -- vim.w.{name} 窗口变量
--- vim.bo.{option} buffer-local 选项
--- vim.wo.{option} window-local 选项
--- options多选项：
--- 一般情况下，options设置为：{noremap=true,silent=true}，其中noremap表示不会重新映射，
+-- vim.bo.{option} buffer-local 选项 vim.wo.{option} window-local 选项 options多选项： 一般情况下，options设置为：{noremap=true,silent=true}，其中noremap表示不会重新映射，
 -- 例如：a->b,b->c，如果启用重新映射，则会a->c，->表示映射。 silent为true,表示不会输出多余的信息。
 --
 --映射
@@ -317,6 +314,13 @@ vim.cmd([[nmap wg Zg]])
 -- c    复制文件
 -- p    粘贴文件
 -- s    以系统默认方式打开文件
+
+-- 6. markdown-preview
+-- 打开markdown-preview
+keymap.set("n", "<A-v>", ":MarkdownPreview<CR>", opt)
+-- 关闭markdown-preview
+keymap.set("n", "<A-c>", ":MarkdownPreviewStop<CR>", opt)
+
 
 -----------------------------------------------------------------------
 

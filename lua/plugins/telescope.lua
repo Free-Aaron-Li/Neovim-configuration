@@ -41,11 +41,11 @@ return{
                         }
                     }
                 },
-                pickers = { 
+                pickers = {
                     -- 内置 pickers 配置
                     find_files = {
                     -- dropdown, cursor, ivy
-                    theme = "dropdown", 
+                    theme = "dropdown",
                     }
                 },
                 extensions = {

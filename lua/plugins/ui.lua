@@ -10,7 +10,7 @@ return{
         },
         config=function()
             vim.opt.termguicolors = true
-                require("bufferline").setup({})
+            require("bufferline").setup({})
         end,
     },
     {
@@ -113,7 +113,7 @@ return{
         config=function()
             -- 前置条件
             require'alpha'.setup(require'alpha.themes.dashboard'.config)
-            local alpha = require'alpha'
+            -- local alpha = require'alpha'
             local dashboard = require("alpha.themes.dashboard")
 
             -- 随机提取颜色（通过字符串、识别符、快捷键、数字）
@@ -151,7 +151,6 @@ return{
                     }
                     return mottos[math.random(#mottos)]
                 end
-                
                 -- 判断时间以此显示正确的问候语句
                 local greetingIndex = 0
                 local hour = tableTime.hour
@@ -175,8 +174,8 @@ return{
                 local nvim_version_info = "    v" .. version.major .. "." .. version.minor .. "." .. version.patch
 
                 -- 显示页脚
-                return "\t" .. famous_quotation() .. "\n" 
-                        .. datetime ..  nvim_version_info .. "\n " 
+                return "\t" .. famous_quotation() .. "\n"
+                        .. datetime ..  nvim_version_info .. "\n "
                         .. plugins .. "\n\t"
                         .. greetingsTable[greetingIndex] .. ", Aaron"
             end

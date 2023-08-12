@@ -1,7 +1,6 @@
 if vim.g.neovide then
-
-    -- vim.o.guifont = "JetBrainsMono Nerd Font:h13"
-    vim.o.guifont = "Monaco Nerd Font:h13"
+    -- vim.o.guifont = "JetBrainsMono Nerd Font:h13,Noto Serif CJK SC:h13"
+    vim.o.guifont = "JetBrainsMono Nerd Font:h13,Noto Sans Mono"
     vim.g.neovide_transparency = 0.97 -- 透明度
     vim.g.neovide_hide_mouse_when_typing = true -- 打字时隐藏鼠标
     vim.g.neovide_confirm_quit = true -- 退出需要确认 

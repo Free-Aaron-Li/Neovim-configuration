@@ -115,7 +115,7 @@ option.termguicolors = true
 
 -- 不可见字符的显示
 option.list = false
-option.listchars = "space:·"
+-- option.listchars = "space:·"
 
 -- 补全增强
 option.wildmenu = true
@@ -133,7 +133,7 @@ option.showtabline = 2
 -- 撤销历史文件
 option.undofile=true
 -- 历史文件存放点
-option.undodir=vim.fn.expand('$HOME/.local/share/nvim/undo')
+option.undodir=vim.fn.expand("$HOME/.local/share/nvim/undo")
 
 -- 未知但有用功能
 option.exrc=true
@@ -146,6 +146,10 @@ option.wrap=true
 -- 鼠标移动事件
 -- 配置插件bufferline的“bufferline-hover-events”
 global.mousemoveevent=true
+
+-- 连接系统剪贴板
+-- 需要安装xclip
+vim.cmd[[set clipboard+=unnamedplus]]
 
 -----------------------------------------------------------------------
 
@@ -202,7 +206,7 @@ keymap.set("n","wq",":w<bar>:Bdelete!<CR>",opt)
 -- 关闭左标签
 keymap.set("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
 -- 关闭右标签
-keymap.set("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt) 
+keymap.set("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
 -- 选择关闭的标签
 keymap.set("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
 
@@ -295,7 +299,7 @@ vim.cmd([[nmap wf Zf]])
 vim.cmd([[nmap wg Zg]])
 
 -- 5. nvim-tree
---
+-- 
 -- 1. 打开文件或文件夹
 -- <CR> / o
 -- 2. 分屏打开文件
@@ -322,5 +326,7 @@ keymap.set("n", "<A-v>", ":MarkdownPreview<CR>", opt)
 keymap.set("n", "<A-c>", ":MarkdownPreviewStop<CR>", opt)
 
 
+
 -----------------------------------------------------------------------
+
 

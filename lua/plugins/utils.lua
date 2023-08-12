@@ -291,4 +291,14 @@ return{
         "ferrine/md-img-paste.vim",
         -- ft = "markdown",
     },
+    {
+        -- https://github.com/lilydjwg/fcitx.vim
+        -- 自动切换输入法
+        'welandx/fcitx5-switch.nvim',
+        opt = true,
+        event = "BufRead",
+        config = function ()
+            require('fcitx5-switch').Leave_enter_cmd()
+        end
+    },
 }

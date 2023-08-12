@@ -1,50 +1,16 @@
 return{
     { -- https://github.com/akinsho/bufferline.nvim
         -- buffer显示
-        'akinsho/bufferline.nvim', 
-        version = "*", 
-        dependencies ={ 
+        'akinsho/bufferline.nvim',
+        version = "*",
+        dependencies ={
             'nvim-tree/nvim-web-devicons',
             'moll/vim-bbye',
             'nvim-treesitter/nvim-treesitter',
         },
         config=function()
             vim.opt.termguicolors = true
-                require("bufferline").setup({
-                    options = {
-                        -- 光标浮动显示删除符号
-                        hover = {
-                            enabled = true,
-                            delay = 200,
-                            reveal = {'close'}
-                        },
-                        -- 关闭 Tab 的命令，这里使用 moll/vim-bbye 的 :Bdelete 命令
-                        close_command = "Bdelete! %d",
-                        right_mouse_command = "Bdelete! %d",
-                        -- 侧边栏配置
-                        -- 左侧让出 nvim-tree 的位置，显示文字 File Explorer
-                        offsets = {
-                            {
-                                filetype = "NvimTree",
-                                text = "File Explorer",
-                                highlight = "Directory",
-                                text_align = "left",
-                        },
-                    },
-                -- 使用 nvim 内置 LSP
-                diagnostics = "nvim_lsp",
-                -- 可选，显示 LSP 报错图标
-                ---@diagnostic disable-next-line: unused-local
-                diagnostics_indicator = function(count, level, diagnostics_dict, context)
-                    local s = " "
-                        for e, n in pairs(diagnostics_dict) do
-                            local sym = e == "error" and " " or (e == "warning" and " " or "")
-                            s = s .. n .. sym
-                        end
-                    return s
-                  end,
-                },
-            })
+                require("bufferline").setup({})
         end,
     },
     {
@@ -141,13 +107,13 @@ return{
         -- nvim首页
         'goolord/alpha-nvim',
         event = "VimEnter",
-        dependencies = { 
+        dependencies = {
             'nvim-tree/nvim-web-devicons'
         },
         config=function()
             -- 前置条件
             require'alpha'.setup(require'alpha.themes.dashboard'.config)
-            local alpha = require("alpha")
+            local alpha = require'alpha'
             local dashboard = require("alpha.themes.dashboard")
 
             -- 随机提取颜色（通过字符串、识别符、快捷键、数字）

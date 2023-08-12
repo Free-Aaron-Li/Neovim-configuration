@@ -21,10 +21,9 @@ option.showmode=false
 
 -- 采用的字符编码集为utf-8
 -- 编码
-global.encoding = "UTF-8"
+global.encoding = "utf-8"
 -- 文件编码
 global.fileencoding = 'utf-8'
-global.fileencodings={'utf-8','ucs-bom','chinese'}
 
 -- jkhl 移动时光标周围保留8行
 option.scrolloff = 8
@@ -133,7 +132,7 @@ option.showtabline = 2
 -- 撤销历史文件
 option.undofile=true
 -- 历史文件存放点
-option.undodir=vim.fn.expand("$HOME/.local/share/nvim/undo")
+-- option.undodir=vim.fn.expand("$HOME/.local/share/nvim/undo")
 
 -- 未知但有用功能
 option.exrc=true
@@ -214,7 +213,7 @@ keymap.set("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
 -- 3. 窗口设置
 --
 --
--- 3.1 创建窗口*
+-- 3.1 创建窗口
 -- 横向创建窗口
 keymap.set("n","<leader>ws","<C-w>s",opt)
 -- 纵向创建窗口

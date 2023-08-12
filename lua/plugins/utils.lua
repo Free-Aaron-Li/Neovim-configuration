@@ -352,11 +352,13 @@ return{
         end,
     },
     {
+        -- 编码时间
         'wakatime/vim-wakatime',
         config=function()
         end,
     },
     {
+        -- markdown预览
         "iamcco/markdown-preview.nvim",
         build = "cd app && npm install",
         ft = { "markdown" },

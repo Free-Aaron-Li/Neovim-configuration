@@ -171,11 +171,11 @@ return{
         config=function()
             require("nvim-tree").setup({
                 sort_by = "case_sensitive",
-                create_in_closed_folder = true,
+                -- this action is now the default behaviour
+                -- create_in_closed_folder = true,
                 hijack_cursor = true,
-                open_on_setup = true,
-                open_on_setup_file = true,
-                focus_empty_on_setup = true,
+                -- will be replaced by a new startup configuration
+                -- focus_empty_on_setup = true,
                 sync_root_with_cwd = true,
                 view = {
                     width = 30,
@@ -197,7 +197,7 @@ return{
                             -- j key = "s", action = "" }, -- system_open
                             -- { key = "W", action = "" }, -- collapse_all
                             -- { key = "g?", action = "" }, -- toggle_help
-                            {key = "g.",action="toggle_hidden"},
+                            -- {key = "g.",action="toggle_hidden"},
                             -- { key = "d", action = "cd" }, -- remove
                             -- { key = "x", action = "remove" }, -- cut
                             --

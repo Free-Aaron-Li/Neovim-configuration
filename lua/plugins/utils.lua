@@ -1,32 +1,32 @@
-return{
+return {
     { -- https://github.com/rhysd/accelerated-jk
         -- 随下拉（上拉）时间加快下滑（上滑）速度
         'rhysd/accelerated-jk',
-        config=function()
-            vim.keymap.set("n", "j", "<Plug>(accelerated_jk_gj)")
-            vim.keymap.set("n", "k", "<Plug>(accelerated_jk_gk)")
-        end,
+        event = 'VeryLazy',
+        keys = {
+            { "j", "<Plug>(accelerated_jk_gj)", mode = { 'n' } },
+            { "k", "<Plug>(accelerated_jk_gk)", mode = { 'n' } },
+        },
     },
     {
         -- https://github.com/folke/persistence.nvim
         -- 保留退出前窗口结构和buffer
         "folke/persistence.nvim",
         event = "BufReadPre", -- this will only start session saving when an actual file was opened
-        config = function()
-            require("persistence").setup()
-            vim.keymap.set("n","<leader>qs", [[<cmd>lua require("persistence").load()<cr>]])
-            vim.keymap.set("n","<leader>ql", [[<cmd>lua require("persistence").load({ last = true})<cr>]])
-            vim.keymap.set("n","<leader>qd", [[<cmd>lua require("persistence").stop()<cr>]])
-        end,
+        keys = {
+            { "<leader>qs", [[<cmd>lua require("persistence").load()<cr>]],               mode = { 'n' } },
+            { "<leader>ql", [[<cmd>lua require("persistence").load({ last = true})<cr>]], mode = { 'n' } },
+            { "<leader>qd", [[<cmd>lua require("persistence").stop()<cr>]],               mode = { 'n' } },
+        },
     },
     {
         -- https://github.com/windwp/nvim-autopairs
         -- 标点符号自动补全
         'windwp/nvim-autopairs',
         event = "InsertEnter",
-        config=function()
+        config = function()
             require('nvim-autopairs').setup({
-                disable_filetype = { "TelescopePrompt" , "vim" }, -- Override default values
+                disable_filetype = { "TelescopePrompt", "vim" }, -- Override default values
                 -- Don't add pairs if it already has a close pair in the same line
                 -- Before        Input         After
                 ------------------------------------
@@ -45,10 +45,10 @@ return{
         -- https://github.com/ethanholz/nvim-lastplace
         -- 保留上一次buffer光标位置
         'ethanholz/nvim-lastplace',
-        config=function()
+        config = function()
             require('nvim-lastplace').setup({
-                lastplace_ignore_buftype = {"quickfix", "nofile", "help"},
-                lastplace_ignore_filetype = {"gitcommit", "gitrebase", "svn", "hgcommit"},
+                lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
+                lastplace_ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit" },
                 lastplace_open_folds = true
             })
         end,
@@ -61,7 +61,7 @@ return{
         event = "VeryLazy",
         config = function()
             require("flash").setup()
-            vim.keymap.set({"n","x","o"},"es",
+            vim.keymap.set({ "n", "x", "o" }, "es",
                 function()
                     require("flash").jump({
                         search = {
@@ -72,17 +72,17 @@ return{
                     })
                 end
             )
-            vim.keymap.set({"n","x","o"},"ed",
+            vim.keymap.set({ "n", "x", "o" }, "ed",
                 function()
                     require("flash").treesitter()
                 end
             )
-            vim.keymap.set({"o"},"rn",
+            vim.keymap.set({ "o" }, "rn",
                 function()
                     require("flash").remote()
                 end
             )
-            vim.keymap.set({"o","x"},"rf",
+            vim.keymap.set({ "o", "x" }, "rf",
                 function()
                     require("flash").treesitter_search()
                 end
@@ -93,7 +93,8 @@ return{
         -- https://github.com/kamykn/spelunker.vim
         -- 单词检查
         'kamykn/spelunker.vim',
-        config=function()
+        event='VeryLazy',
+        config = function()
             -- Enable spelunker.vim. (default: 1)
             -- 1: enable
             -- 0: disable
@@ -165,10 +166,11 @@ return{
         -- https://github.com/nvim-tree/nvim-tree.lua
         -- 文件目录树
         'nvim-tree/nvim-tree.lua',
+        event='VeryLazy',
         dependencies = {
-          'nvim-tree/nvim-web-devicons', -- file icons
+            'nvim-tree/nvim-web-devicons', -- file icons
         },
-        config=function()
+        config = function()
             require("nvim-tree").setup({
                 sort_by = "case_sensitive",
                 -- this action is now the default behaviour
@@ -275,8 +277,8 @@ return{
                 },
             })
             -- 打开与关闭快捷键
-            vim.keymap.set("n","<leader><leader>pr", ":NvimTreeOpen<CR>", {})
-            vim.keymap.set("n","<S-n>", ":NvimTreeClose<CR>", {})
+            vim.keymap.set("n", "<leader><leader>pr", ":NvimTreeOpen<CR>", {})
+            vim.keymap.set("n", "<S-n>", ":NvimTreeClose<CR>", {})
 
             -- 自动关闭
             vim.cmd([[
@@ -294,9 +296,9 @@ return{
             vim.o.timeoutlen = 10000
         end,
         opts = {
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
         }
 
     },
@@ -310,7 +312,8 @@ return{
         -- https://github.com/echasnovski/mini.comment
         -- 代码注释
         'echasnovski/mini.comment',
-        config=function()
+        event='VeryLazy',
+        config = function()
             require('mini.comment').setup({
                 mappings = {
                     -- Toggle comment (like `gcip` - comment inner paragraph) for both
@@ -333,7 +336,7 @@ return{
         event = 'VeryLazy',
         version = '2.*',
         config = function()
-            require'window-picker'.setup({
+            require 'window-picker'.setup({
                 filter_rules = {
                     include_current_win = true,
                     bo = {
@@ -354,19 +357,20 @@ return{
     {
         -- 编码时间
         'wakatime/vim-wakatime',
-        config=function()
+        config = function()
         end,
     },
     {
         -- markdown预览
         "iamcco/markdown-preview.nvim",
+        event='VeryLazy',
         build = "cd app && npm install",
         ft = { "markdown" },
-        config=function()
+        config = function()
             vim.g.mkdp_filetypes = { "markdown" }
             -- set default theme (dark or light)
             -- By default the theme is define according to the preferences of the system
-            vim.g.mkdp_theme='light'
+            vim.g.mkdp_theme = 'light'
             -- specify browser to open preview page
             -- for path with space
             -- valid: `/path/with\ space/xxx`
@@ -379,12 +383,14 @@ return{
         -- https://github.com/dhruvasagar/vim-table-mode
         -- 表格预览
         "dhruvasagar/vim-table-mode",
+        event='VeryLazy',
         -- ft = "markdown",
     },
     {
         -- https://github.com/img-paste-devs/img-paste.vim
         -- 从剪贴板插入图片
         "ferrine/md-img-paste.vim",
+        event='VeryLazy',
         -- ft = "markdown",
     },
     {
@@ -393,7 +399,7 @@ return{
         'welandx/fcitx5-switch.nvim',
         opt = true,
         event = "BufRead",
-        config = function ()
+        config = function()
             require('fcitx5-switch').Leave_enter_cmd()
         end
     },

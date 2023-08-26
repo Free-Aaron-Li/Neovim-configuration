@@ -1,14 +1,15 @@
-return{
+return {
     { -- https://github.com/akinsho/bufferline.nvim
         -- buffer显示
         'akinsho/bufferline.nvim',
+        event = 'VeryLazy',
         version = "*",
-        dependencies ={
+        dependencies = {
             'nvim-tree/nvim-web-devicons',
             'moll/vim-bbye',
             'nvim-treesitter/nvim-treesitter',
         },
-        config=function()
+        config = function()
             vim.opt.termguicolors = true
             require("bufferline").setup({})
         end,
@@ -17,7 +18,8 @@ return{
         -- https://github.com/lukas-reineke/indent-blankline.nvim
         -- 缩进竖线
         "lukas-reineke/indent-blankline.nvim",
-        config=function()
+        event = 'VeryLazy',
+        config = function()
             vim.opt.termguicolors = true
 
             ------------------
@@ -58,9 +60,10 @@ return{
         -- https://github.com/lewis6991/gitsigns.nvim
         -- 在侧边栏显示文档增删改git信息
         'lewis6991/gitsigns.nvim',
-        config=function()
-            require('gitsigns').setup ({
-                signs = {
+        event = 'VeryLazy',
+        config = function()
+            require('gitsigns').setup({
+                signs                        = {
                     add          = { text = '┃' },
                     change       = { text = '┃' },
                     delete       = { text = '▁' },
@@ -68,27 +71,27 @@ return{
                     changedelete = { text = '~' },
                     untracked    = { text = '┆' },
                 },
-                signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`      侧边栏显示增删改信息
-                numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`      行号显示增删改信息
-                linehl     = false, -- Toggle with `:Gitsigns toggle_linehl`     代码块阴影显示增删改信息
-                word_diff  = false, -- Toggle with `:Gitsigns toggle_word_diff`  字符添加阴影显示增删改信息
-                watch_gitdir = {
+                signcolumn                   = true, -- Toggle with `:Gitsigns toggle_signs`      侧边栏显示增删改信息
+                numhl                        = false, -- Toggle with `:Gitsigns toggle_numhl`      行号显示增删改信息
+                linehl                       = false, -- Toggle with `:Gitsigns toggle_linehl`     代码块阴影显示增删改信息
+                word_diff                    = false, -- Toggle with `:Gitsigns toggle_word_diff`  字符添加阴影显示增删改信息
+                watch_gitdir                 = {
                     follow_files = true
                 },
-                attach_to_untracked = true,
-                current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
-                current_line_blame_opts = { -- 行后信息显示格式
+                attach_to_untracked          = true,
+                current_line_blame           = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
+                current_line_blame_opts      = {   -- 行后信息显示格式
                     virt_text = true,
                     virt_text_pos = 'right_align', -- 'eol' | 'overlay' | 'right_align'
                     delay = 1000,
                     ignore_whitespace = true,
                 },
                 current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
-                sign_priority = 6,
-                update_debounce = 100,
-                status_formatter = nil, -- Use default
-                max_file_length = 40000, -- Disable if file is longer than this (in lines)
-                preview_config = {
+                sign_priority                = 6,
+                update_debounce              = 100,
+                status_formatter             = nil, -- Use default
+                max_file_length              = 40000, -- Disable if file is longer than this (in lines)
+                preview_config               = {
                     -- Options passed to nvim_open_win
                     border = 'single',
                     style = 'minimal',
@@ -96,7 +99,7 @@ return{
                     row = 2,
                     col = 1
                 },
-                yadm = {
+                yadm                         = {
                     enable = false,
                 },
             })
@@ -110,16 +113,16 @@ return{
         dependencies = {
             'nvim-tree/nvim-web-devicons'
         },
-        config=function()
+        config = function()
             -- 前置条件
-            require'alpha'.setup(require'alpha.themes.dashboard'.config)
+            require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
             -- local alpha = require'alpha'
             local dashboard = require("alpha.themes.dashboard")
 
             -- 随机提取颜色（通过字符串、识别符、快捷键、数字）
             math.randomseed(os.time())
             local function pick_color()
-                local colors = {"String", "Identifier", "Keyword", "Number"}
+                local colors = { "String", "Identifier", "Keyword", "Number" }
                 return colors[math.random(#colors)]
             end
 
@@ -138,8 +141,8 @@ return{
                     [5] = "󰖔  Good night",
                 }
                 -- 名言列表
-                local function  famous_quotation()
-                    local mottos={
+                local function famous_quotation()
+                    local mottos = {
                         "   学无止境  志在千里   ",
                         "   青衿之志  履践致远   ", -- 年少的读书人要有志向，只有把根基打好了，才能走得更远。
                         "   浅予深深  长乐未央   ", -- 我们给予他人的东西虽然并不贵重，但是其中包含了我们深深的情意，这也使得我们的快乐可以永不停止。
@@ -155,15 +158,15 @@ return{
                 local greetingIndex = 0
                 local hour = tableTime.hour
                 if hour == 23 or hour < 7 then
-                  greetingIndex = 1
+                    greetingIndex = 1
                 elseif hour < 12 then
-                  greetingIndex = 2
+                    greetingIndex = 2
                 elseif hour >= 12 and hour < 18 then
-                  greetingIndex = 3
+                    greetingIndex = 3
                 elseif hour >= 18 and hour < 21 then
-                  greetingIndex = 4
+                    greetingIndex = 4
                 elseif hour >= 21 then
-                  greetingIndex = 5
+                    greetingIndex = 5
                 end
 
                 -- 获取lazy插件管理状态并以此得到插件数目、启动时间
@@ -175,9 +178,9 @@ return{
 
                 -- 显示页脚
                 return "\t" .. famous_quotation() .. "\n"
-                        .. datetime ..  nvim_version_info .. "\n "
-                        .. plugins .. "\n\t"
-                        .. greetingsTable[greetingIndex] .. ", Aaron"
+                    .. datetime .. nvim_version_info .. "\n "
+                    .. plugins .. "\n\t"
+                    .. greetingsTable[greetingIndex] .. ", Aaron"
             end
 
             -- 页面logo
@@ -211,7 +214,8 @@ return{
         -- https://github.com/RRethy/vim-illuminate
         -- 阴影显示相同单词或内容
         'RRethy/vim-illuminate',
-        config=function()
+        event = 'VeryLazy',
+        config = function()
             require('illuminate').configure({
                 -- providers: provider used to get references in the buffer, ordered by priority
                 providers = {

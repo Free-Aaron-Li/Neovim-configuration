@@ -3,6 +3,7 @@ return {
         -- https://www.github.com/neovim/nvim-lspconfig
         -- lsp配置
         "neovim/nvim-lspconfig",
+        -- 读取文件或打开文件使用
         dependencies = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig",

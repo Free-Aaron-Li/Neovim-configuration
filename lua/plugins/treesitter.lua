@@ -3,6 +3,7 @@ return{
         -- https://github.com/nvim-treesitter/nvim-treesitter
         -- 语法高亮、代码结构集合
         'nvim-treesitter/nvim-treesitter',
+        event='BufReadPost',
         dependencies={
             -- https://github.com/nvim-treesitter/playground
             'nvim-treesitter/playground',

@@ -4,6 +4,7 @@ return{
         -- https://github.com/nvim-telescope/telescope.nvim
         -- 文件、文字搜素
         'nvim-telescope/telescope.nvim',
+        event='VeryLazy',
         branch = '0.1.x',
         dependencies = {
             'nvim-lua/plenary.nvim',

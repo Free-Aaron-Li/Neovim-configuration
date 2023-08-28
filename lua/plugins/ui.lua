@@ -11,8 +11,8 @@ return {
         config = function()
             vim.opt.termguicolors = true
             require("bufferline").setup({
-                options={
-                    close_command="Bdelete! %d",
+                options = {
+                    close_command = "Bdelete! %d",
                 }
             })
         end,
@@ -81,14 +81,15 @@ return {
                     follow_files = true
                 },
                 attach_to_untracked          = true,
-                current_line_blame           = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
+                current_line_blame           = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
                 current_line_blame_opts      = {     -- 行后信息显示格式
                     virt_text = true,
                     virt_text_pos = 'right_align',   -- 'eol' | 'overlay' | 'right_align'
                     delay = 1000,
                     ignore_whitespace = true,
                 },
-                current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
+                -- example: <author>, <author_time:%Y-%m-%d> - <summary>
+                current_line_blame_formatter = '<author_time:%m-%d>,<summary>',
                 sign_priority                = 6,
                 update_debounce              = 100,
                 status_formatter             = nil,   -- Use default
@@ -204,11 +205,13 @@ return {
             dashboard.section.footer.opts.hl = "Constant"
             -- 显示页面选项
             dashboard.section.buttons.val = {
-                dashboard.button("<Leader><leader>pj", "󰬱  workspace",":lua require'telescope'.extensions.project.project{}<cr>"),
-                dashboard.button("<Leader><leader>pr", "  contents",":Telescope file_browser path=%:p:h select_buffer=true<cr>"),
-                dashboard.button("<Leader><leader>fo", "  Recently files",":Telescope oldfiles<cr>"),
-                dashboard.button("<Leader>ce", "  Find Keybindings",":edit ~/.config/nvim/lua/essentials.lua<cr>"),
-                dashboard.button("<Leader>lu", "  Update plugins",":Lazy update<cr>"),
+                dashboard.button("<Leader><leader>pj", "󰬱  workspace",
+                    ":lua require'telescope'.extensions.project.project{}<cr>"),
+                dashboard.button("<Leader><leader>pr", "  contents",
+                    ":Telescope file_browser path=%:p:h select_buffer=true<cr>"),
+                dashboard.button("<Leader><leader>fo", "  Recently files", ":Telescope oldfiles<cr>"),
+                dashboard.button("<Leader>ce", "  Find Keybindings", ":edit ~/.config/nvim/lua/essentials.lua<cr>"),
+                dashboard.button("<Leader>lu", "  Update plugins", ":Lazy update<cr>"),
                 dashboard.button("q", "  Quit", ":qa<cr>")
             }
         end,

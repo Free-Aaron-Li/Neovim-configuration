@@ -1,7 +1,7 @@
 if vim.g.neovide then
     -- vim.o.guifont = "JetBrainsMono Nerd Font:h13,Noto Sans Mono:h13"
     vim.o.guifont = "JetBrainsMono Nerd Font,Noto Sans CJK SC"
-    vim.g.neovide_transparency = 0.97 -- 透明度
+    vim.g.neovide_transparency = 1 -- 透明度
     vim.g.neovide_hide_mouse_when_typing = true -- 打字时隐藏鼠标
     vim.g.neovide_confirm_quit = true -- 退出需要确认 
     vim.g.neovide_fullscreen = false -- 是否全屏

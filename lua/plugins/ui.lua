@@ -2,7 +2,6 @@ return {
     { -- https://github.com/akinsho/bufferline.nvim
         -- buffer显示
         'akinsho/bufferline.nvim',
-        event = 'VeryLazy',
         version = "*",
         dependencies = {
             'nvim-tree/nvim-web-devicons',
@@ -11,14 +10,17 @@ return {
         },
         config = function()
             vim.opt.termguicolors = true
-            require("bufferline").setup({})
+            require("bufferline").setup({
+                options={
+                    close_command="Bdelete! %d",
+                }
+            })
         end,
     },
     {
         -- https://github.com/lukas-reineke/indent-blankline.nvim
         -- 缩进竖线
         "lukas-reineke/indent-blankline.nvim",
-        event = 'VeryLazy',
         config = function()
             vim.opt.termguicolors = true
 
@@ -71,7 +73,7 @@ return {
                     changedelete = { text = '~' },
                     untracked    = { text = '┆' },
                 },
-                signcolumn                   = true, -- Toggle with `:Gitsigns toggle_signs`      侧边栏显示增删改信息
+                signcolumn                   = true,  -- Toggle with `:Gitsigns toggle_signs`      侧边栏显示增删改信息
                 numhl                        = false, -- Toggle with `:Gitsigns toggle_numhl`      行号显示增删改信息
                 linehl                       = false, -- Toggle with `:Gitsigns toggle_linehl`     代码块阴影显示增删改信息
                 word_diff                    = false, -- Toggle with `:Gitsigns toggle_word_diff`  字符添加阴影显示增删改信息
@@ -80,16 +82,16 @@ return {
                 },
                 attach_to_untracked          = true,
                 current_line_blame           = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
-                current_line_blame_opts      = {   -- 行后信息显示格式
+                current_line_blame_opts      = {     -- 行后信息显示格式
                     virt_text = true,
-                    virt_text_pos = 'right_align', -- 'eol' | 'overlay' | 'right_align'
+                    virt_text_pos = 'right_align',   -- 'eol' | 'overlay' | 'right_align'
                     delay = 1000,
                     ignore_whitespace = true,
                 },
                 current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
                 sign_priority                = 6,
                 update_debounce              = 100,
-                status_formatter             = nil, -- Use default
+                status_formatter             = nil,   -- Use default
                 max_file_length              = 40000, -- Disable if file is longer than this (in lines)
                 preview_config               = {
                     -- Options passed to nvim_open_win
@@ -202,10 +204,10 @@ return {
             dashboard.section.footer.opts.hl = "Constant"
             -- 显示页面选项
             dashboard.section.buttons.val = {
-                dashboard.button("<Leader>ff", "  File Explorer"),
-                dashboard.button("<Leader>fo", "  Find File"),
-                dashboard.button("<Leader>fw", "  Find Word"),
-                dashboard.button("<Leader>ps", "  Update plugins"),
+                dashboard.button("<Leader>ff", "  Projects",":Telescope Projects"),
+                dashboard.button("<Leader>fo", "  Recently files",":Telescope oldfiles<cr>"),
+                dashboard.button("<Leader>fw", "  Find Keybindings",":edit ~/.config/nvim/lua/essentials.lua<cr>"),
+                dashboard.button("<Leader>ps", "  Update plugins",":"),
                 dashboard.button("q", "  Quit", ":qa<cr>")
             }
         end,

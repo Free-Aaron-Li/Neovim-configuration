@@ -54,46 +54,10 @@ return {
         end,
     },
     {
-        -- https://github.com/folke/flash.nvim
-        -- 全局移动
-        -- 命令f+目标内容单词，通过f前往目标单词，shift+f回到上一个单词
-        "folke/flash.nvim",
-        event = "VeryLazy",
-        config = function()
-            require("flash").setup()
-            vim.keymap.set({ "n", "x", "o" }, "es",
-                function()
-                    require("flash").jump({
-                        search = {
-                            mode = function(str)
-                                return "\\<" .. str
-                            end,
-                        },
-                    })
-                end
-            )
-            vim.keymap.set({ "n", "x", "o" }, "ed",
-                function()
-                    require("flash").treesitter()
-                end
-            )
-            vim.keymap.set({ "o" }, "rn",
-                function()
-                    require("flash").remote()
-                end
-            )
-            vim.keymap.set({ "o", "x" }, "rf",
-                function()
-                    require("flash").treesitter_search()
-                end
-            )
-        end,
-    },
-    {
         -- https://github.com/kamykn/spelunker.vim
         -- 单词检查
         'kamykn/spelunker.vim',
-        event='VeryLazy',
+        event = 'VeryLazy',
         config = function()
             -- Enable spelunker.vim. (default: 1)
             -- 1: enable
@@ -163,130 +127,6 @@ return {
         end,
     },
     {
-        -- https://github.com/nvim-tree/nvim-tree.lua
-        -- 文件目录树
-        'nvim-tree/nvim-tree.lua',
-        event='VeryLazy',
-        dependencies = {
-            'nvim-tree/nvim-web-devicons', -- file icons
-        },
-        config = function()
-            require("nvim-tree").setup({
-                sort_by = "case_sensitive",
-                -- this action is now the default behaviour
-                -- create_in_closed_folder = true,
-                hijack_cursor = true,
-                -- will be replaced by a new startup configuration
-                -- focus_empty_on_setup = true,
-                sync_root_with_cwd = true,
-                view = {
-                    width = 30,
-                    adaptive_size = false,
-                    mappings = {
-                        list = {
-                            -- { key = { "<2-RightMouse>", "<C-]>" }, action = "" }, -- cd
-                            -- { key = "<C-v>", action = "" }, -- vsplit
-                            -- { key = "<C-x>", action = "" }, -- split
-                            -- { key = "<C-t>", action = "" }, -- tabnew
-                            -- { key = "<BS>", action = "" }, -- close_node
-                            -- { key = "<Tab>", action = "" }, -- preview
-                            -- { key = "D", action = "" }, -- trash
-                            -- { key = "[e", action = "" }, -- prev_diag_item
-                            -- { key = "]e", action = "" }, -- next_diag_item
-                            -- { key = "[c", action = "" }, -- prev_git_item
-                            -- { key = "]c", action = "" }, -- next_git_item
-                            -- { key = "o", action = "" }, -- dir_up
-                            -- j key = "s", action = "" }, -- system_open
-                            -- { key = "W", action = "" }, -- collapse_all
-                            -- { key = "g?", action = "" }, -- toggle_help
-                            -- {key = "g.",action="toggle_hidden"},
-                            -- { key = "d", action = "cd" }, -- remove
-                            -- { key = "x", action = "remove" }, -- cut
-                            --
-                            -- { key = "t", action = "cut" },
-                            -- { key = "<Space>p", action = "prev_diag_item" },
-                            -- { key = "<Space>.", action = "next_diag_item" },
-                            -- { key = "<Space>k", action = "prev_git_item" },
-                            -- { key = "<Space>j", action = "next_git_item" },
-                            -- { key = "u", action = "dir_up" },
-                            -- { key = "'", action = "close_node" },
-                            -- { key = '"', action = "collapse_all" },
-                            -- { key = "?", action = "toggle_help" },
-                        },
-                    },
-                },
-                renderer = {
-                    full_name = true,
-                    group_empty = true,
-                    special_files = {},
-                    symlink_destination = false,
-                    indent_markers = {
-                        enable = true,
-                    },
-                    icons = {
-                        git_placement = "signcolumn",
-                        show = {
-                            file = true,
-                            folder = false,
-                            folder_arrow = false,
-                            git = true,
-                        },
-                    },
-                },
-                update_focused_file = {
-                    enable = true,
-                    update_root = true,
-                    ignore_list = { "help" },
-                },
-                diagnostics = {
-                    enable = true,
-                    show_on_dirs = true,
-                },
-                filters = {
-                    custom = {
-                        "^.git$",
-                    },
-                },
-                actions = {
-                    change_dir = {
-                        enable = false,
-                        restrict_above_cwd = false,
-                    },
-                    open_file = {
-                        resize_window = true,
-                        window_picker = {
-                            chars = "aoeui",
-                        },
-                    },
-                    remove_file = {
-                        close_window = true,
-                    },
-                },
-                log = {
-                    enable = false,
-                    truncate = true,
-                    types = {
-                        all = false,
-                        config = false,
-                        copy_paste = false,
-                        diagnostics = false,
-                        git = false,
-                        profile = false,
-                        watcher = false,
-                    },
-                },
-            })
-            -- 打开与关闭快捷键
-            vim.keymap.set("n", "<leader><leader>pr", ":NvimTreeOpen<CR>", {})
-            vim.keymap.set("n", "<S-n>", ":NvimTreeClose<CR>", {})
-
-            -- 自动关闭
-            vim.cmd([[
-                autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
-            ]])
-        end,
-    },
-    {
         -- https://github.com/folke/which-key.nvim
         -- 查看快捷键所属、映射
         "folke/which-key.nvim",
@@ -312,7 +152,7 @@ return {
         -- https://github.com/echasnovski/mini.comment
         -- 代码注释
         'echasnovski/mini.comment',
-        event='VeryLazy',
+        event = 'VeryLazy',
         config = function()
             require('mini.comment').setup({
                 mappings = {
@@ -363,7 +203,7 @@ return {
     {
         -- markdown预览
         "iamcco/markdown-preview.nvim",
-        event='VeryLazy',
+        event = 'VeryLazy',
         build = "cd app && npm install",
         ft = { "markdown" },
         config = function()
@@ -383,14 +223,18 @@ return {
         -- https://github.com/dhruvasagar/vim-table-mode
         -- 表格预览
         "dhruvasagar/vim-table-mode",
-        event='VeryLazy',
+        event = 'VeryLazy',
         -- ft = "markdown",
+    },
+    {
+        -- 快速跳转
+        'Lokaltog/vim-easymotion'
     },
     {
         -- https://github.com/img-paste-devs/img-paste.vim
         -- 从剪贴板插入图片
         "ferrine/md-img-paste.vim",
-        event='VeryLazy',
+        event = 'VeryLazy',
         -- ft = "markdown",
     },
     {

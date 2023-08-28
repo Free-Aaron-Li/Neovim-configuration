@@ -70,7 +70,7 @@ option.hlsearch = false
 option.incsearch = true
 
 -- 命令行高
-option.cmdheight = 2
+option.cmdheight = 1
 
 -- 当文件被外部程序修改时，自动加载
 option.autoread = true
@@ -201,7 +201,7 @@ keymap.set("n","<C-l>",":BufferLineCycleNext<CR>",opt)
 -- 
 --
 -- 2.2 关闭buffer
-keymap.set("n","wq",":w<bar>:Bdelete!<CR>",opt)
+keymap.set("n","wq",":Bdelete!<CR>",opt)
 -- 关闭左标签
 keymap.set("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
 -- 关闭右标签
@@ -297,26 +297,25 @@ vim.cmd([[nmap wf Zf]])
 -- 将“错误单词”加入字典
 vim.cmd([[nmap wg Zg]])
 
--- 5. nvim-tree
--- 
--- 1. 打开文件或文件夹
--- <CR> / o
--- 2. 分屏打开文件
--- v(vsplit) / h(split)
--- 3. 显示隐藏文件
--- 对应 filters 中的 custom (node_modules)
--- i
--- 隐藏点文件（隐藏文件）
--- .
--- 4. 文件操作
--- <F5> 刷新
--- a    创建文件
--- d    删除文件
--- r    重命名文件
--- x    剪切文件
--- c    复制文件
--- p    粘贴文件
--- s    以系统默认方式打开文件
+-- 5. Telescope file_browser
+-- Insert / Normal	fb_actions	        Description
+-- <A-c>/c	        create	                Create file/folder at current path (trailing path separator creates folder)
+-- <S-CR>	        create_from_prompt	Create and open file/folder from prompt (trailing path separator creates folder)
+-- <A-r>/r	        rename	                Rename multi-selected files/folders
+-- <A-m>/m	        move	                Move multi-selected files/folders to current path
+-- <A-y>/y	        copy	                Copy (multi-)selected files/folders to current path
+-- <A-d>/d	        remove	                Delete (multi-)selected files/folders
+-- <C-o>/o	        open	                Open file/folder with default system application
+-- <C-g>/g	        goto_parent_dir	        Go to parent directory
+-- <C-e>/e	        goto_home_dir	        Go to home directory
+-- <C-w>/w	        goto_cwd	        Go to current working directory (cwd)
+-- <C-t>/t	        change_cwd	        Change nvim's cwd to selected folder/file(parent)
+-- <C-f>/f	        toggle_browser	        Toggle between file and folder browser
+-- <C-h>/h	        toggle_hidden	        Toggle hidden files/folders
+-- <C-s>/s	        toggle_all	        Toggle all entries ignoring ./ and ../
+-- <Tab>	        see telescope.nvim	Toggle selection and move to next selection
+-- <S-Tab>	        see telescope.nvim	Toggle selection and move to prev selection
+-- <bs>/	        backspace	        With an empty prompt, goes to parent dir. Otherwise acts normally
 
 -- 6. markdown-preview
 -- 打开markdown-preview
@@ -324,6 +323,16 @@ keymap.set("n", "<A-v>", ":MarkdownPreview<CR>", opt)
 -- 关闭markdown-preview
 keymap.set("n", "<A-c>", ":MarkdownPreviewStop<CR>", opt)
 
+-- 7. telescope project
+-- Key	        Description
+-- <c-d>	delete currently selected project
+-- <c-v>	rename currently selected project
+-- <c-a>	create a project*
+-- <c-s>	search inside files within your project
+-- <c-b>	browse inside files within your project
+-- <c-l>	change to the selected project's directory without opening it
+-- <c-r>	find a recently opened file within your project
+-- <c-f>	find a file within your project (same as <CR>)
 
 
 -----------------------------------------------------------------------

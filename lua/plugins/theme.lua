@@ -20,7 +20,7 @@ return{
             {
                 'nvim-lualine/lualine.nvim',
                 dependencies={
-                    'nvim-tree/nvim-web-devicons', 
+                    'nvim-tree/nvim-web-devicons',
                 },
             },
         },
@@ -34,7 +34,7 @@ return{
             require('lualine').setup({
                 extensions = {
                     "nvim-tree",
-                    "toggleterm", 
+                    "toggleterm",
                 },
                 options={
                     theme = 'tokyonight',

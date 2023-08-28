@@ -228,7 +228,12 @@ return {
     },
     {
         -- 快速跳转
-        'Lokaltog/vim-easymotion'
+        'phaazon/hop.nvim',
+        config = function()
+            vim.keymap.set("n", "<leader>da", ":HopLine<cr>", { desc = '[G]o to any line and line start' })
+            vim.keymap.set("n", "<leader>ds", ":HopWord<cr>", { desc = '[G]o to any word in the current buffer' })
+            require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+        end,
     },
     {
         -- https://github.com/img-paste-devs/img-paste.vim

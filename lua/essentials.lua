@@ -190,6 +190,7 @@ keymap.set("n","<leader>cs",":source<CR>")
 -- 退出
 keymap.set("n","<A-j>","<ESC>")
 keymap.set("i","<A-j>","<ESC>")
+--vim.cmd[[tnoremap <S-n> <C-\><C-n>:q!<CR>]]
 
 
 -- 2. 跳转Tab
@@ -334,7 +335,8 @@ keymap.set("n", "<A-c>", ":MarkdownPreviewStop<CR>", opt)
 -- <c-r>	find a recently opened file within your project
 -- <c-f>	find a file within your project (same as <CR>)
 
-
+-- 8. Lazy 
+keymap.set("n","<leader>lu",":Lazy update<cr>");
 -----------------------------------------------------------------------
 
 

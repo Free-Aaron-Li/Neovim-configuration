@@ -9,10 +9,10 @@ return {
             "williamboman/mason-lspconfig",
             -- https://www.github.com/folke/neoconf.nvim
             -- 类似vscode的json配置
-            "folke/neoconf.nvim",
+            -- "folke/neoconf.nvim",
             -- https://www.github.com/folke/neodev.nvim
             -- 正常识别vimAPI
-            "folke/neodev.nvim",
+            -- "folke/neodev.nvim",
             {
                 -- https://www.github.com/j-hui/fidget.nvim
                 -- 在右下角显示lsp配置进度
@@ -30,8 +30,8 @@ return {
             },
         },
         config = function()
-            require("neoconf").setup()
-            require("neodev").setup()
+            -- require("neoconf").setup()
+            -- require("neodev").setup()
             require("fidget").setup()
             require("lspsaga").setup()
             require("mason").setup()
@@ -41,6 +41,13 @@ return {
                     Lua = {
                         workspace = { checkThirdParty = false },
                         telemetry = { enable = false },
+                        diagnostics={
+                            -- get the language server to recongnize the 'vim' global
+                            globals={
+                                'vim',
+                                'require',
+                            }
+                        }
                     },
                 },
                 pyright = {},                         -- python

@@ -24,7 +24,7 @@ return {
         },
         config = function()
             local fb_actions = require "telescope".extensions.file_browser.actions
-            local project_actions = require("telescope._extensions.project.actions")
+            -- local project_actions = require("telescope._extensions.project.actions")
             require('telescope').setup({
                 defaults = {
                     -- 打开弹窗后进入的初始模式，默认为 insert
@@ -97,7 +97,7 @@ return {
                         base_dirs = {},
                         hidden_files = false, -- default: false
                         -- theme = "dropdown",
-                        order_by = "asc",
+                        order_by = "recent",
                         search_by = "title",
                         -- sync_with_nvim_tree = false, -- default false
                         -- default for on_project_selected = find project files
@@ -125,9 +125,9 @@ return {
             -- 查看目录（查看当前目录）
             vim.keymap.set('n', '<leader><leader>pr', ':Telescope file_browser path=%:p:h select_buffer=true<cr>',
                 { desc = '[F]iles browser' })
-            -- 查看项目文件
+            -- 查看工作空间
             vim.keymap.set('n', '<leader><leader>pj', ":lua require'telescope'.extensions.project.project{}<cr>",
-                { noremap = true, silent = true })
+                { noremap = true, silent = true, desc='[O]pen workspace'})
             -- 当前目录下内容查找
             vim.keymap.set('n', '<leader><leader>/', function()
                 -- You can pass additional configuration to telescope to change theme, layout, etc.

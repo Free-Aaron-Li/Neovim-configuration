@@ -204,10 +204,11 @@ return {
             dashboard.section.footer.opts.hl = "Constant"
             -- 显示页面选项
             dashboard.section.buttons.val = {
-                dashboard.button("<Leader>ff", "  Projects",":Telescope Projects"),
-                dashboard.button("<Leader>fo", "  Recently files",":Telescope oldfiles<cr>"),
-                dashboard.button("<Leader>fw", "  Find Keybindings",":edit ~/.config/nvim/lua/essentials.lua<cr>"),
-                dashboard.button("<Leader>ps", "  Update plugins",":"),
+                dashboard.button("<Leader><leader>pj", "󰬱  workspace",":lua require'telescope'.extensions.project.project{}<cr>"),
+                dashboard.button("<Leader><leader>pr", "  contents",":Telescope file_browser path=%:p:h select_buffer=true<cr>"),
+                dashboard.button("<Leader><leader>fo", "  Recently files",":Telescope oldfiles<cr>"),
+                dashboard.button("<Leader>ce", "  Find Keybindings",":edit ~/.config/nvim/lua/essentials.lua<cr>"),
+                dashboard.button("<Leader>lu", "  Update plugins",":Lazy update<cr>"),
                 dashboard.button("q", "  Quit", ":qa<cr>")
             }
         end,

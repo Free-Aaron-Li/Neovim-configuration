@@ -46,15 +46,15 @@ return {
                 show_current_context = true,
                 show_current_context_start = true,
                 -- 彩虹竖线配置，需要上方前置rgb设定
-                -- space_char_blankline = " ",
-                -- char_highlight_list = {
-                --     "IndentBlanklineIndent1",
-                --     "IndentBlanklineIndent2",
-                --     "IndentBlanklineIndent3",
-                --     "IndentBlanklineIndent4",
-                --     "IndentBlanklineIndent5",
-                --     "IndentBlanklineIndent6",
-                -- },
+                space_char_blankline = " ",
+                char_highlight_list = {
+                    "IndentBlanklineIndent1",
+                    "IndentBlanklineIndent2",
+                    "IndentBlanklineIndent3",
+                    "IndentBlanklineIndent4",
+                    "IndentBlanklineIndent5",
+                    "IndentBlanklineIndent6",
+                },
             })
         end,
     },

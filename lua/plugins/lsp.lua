@@ -45,7 +45,7 @@ return {
                             -- get the language server to recongnize the 'vim' global
                             globals={
                                 'vim',
-                                'require',
+                                'require'
                             }
                         }
                     },

@@ -79,6 +79,9 @@ return {
                         mappings = {
                             ["i"] = {
                                 -- your custom insert mode mappings
+                            },
+                            ["n"] = {
+                                -- your custom normal mode mappings
                                 ['c'] = fb_actions.create,
                                 ['r'] = fb_actions.rename,
                                 ['m'] = fb_actions.move,
@@ -87,9 +90,6 @@ return {
                                 ['o'] = fb_actions.open,
                                 ['h'] = fb_actions.toggle_hidden,
                                 ['e'] = fb_actions.goto_home_dir,
-                            },
-                            ["n"] = {
-                                -- your custom normal mode mappings
                             }
                         }
                     },
@@ -127,7 +127,7 @@ return {
                 { desc = '[F]iles browser' })
             -- 查看工作空间
             vim.keymap.set('n', '<leader><leader>pj', ":lua require'telescope'.extensions.project.project{}<cr>",
-                { noremap = true, silent = true, desc='[O]pen workspace'})
+                { noremap = true, silent = true, desc = '[O]pen workspace' })
             -- 当前目录下内容查找
             vim.keymap.set('n', '<leader><leader>/', function()
                 -- You can pass additional configuration to telescope to change theme, layout, etc.

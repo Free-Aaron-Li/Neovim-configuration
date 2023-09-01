@@ -356,3 +356,5 @@ wintitle
 autoclose
 autoinsert
 ifstream
+ifndef
+deque

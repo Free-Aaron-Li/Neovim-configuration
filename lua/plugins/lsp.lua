@@ -119,6 +119,7 @@ return {
         -- https://www.github.com/hrsh7th/nvim-cmp
         -- lsp自动补全
         "hrsh7th/nvim-cmp",
+        event="VeryLazy",
         dependencies = {
             -- https://www.github.com/hrsh7th/cmp-path
             'hrsh7th/cmp-path',
@@ -171,8 +172,16 @@ return {
                         fallback()
                     end
                 end, { "i", "s" }),
+
                 ['<CR>'] = cmp.mapping.confirm({ select = true }),
 
+                ['<A-j>']=cmp.mapping(function ()
+                    if cmp.mapping.open_docs then
+                        cmp.mapping.close_docs()
+                    end
+                end,{"n"}),
+
+                ['M']=cmp.mapping.open_docs,
             }
             require('luasnip.loaders.from_vscode').lazy_load()
             cmp.setup {
@@ -218,6 +227,7 @@ return {
         -- https://www.github.com/mfussenegger/nvim-dap
         -- Debug支持
         'mfussenegger/nvim-dap',
+        event="VeryLazy",
         dependencies = {
             -- https://www.github.com/rcarriga/nvim-dap-ui
             'rcarriga/nvim-dap-ui',
@@ -241,6 +251,5 @@ return {
             end
 
         end
-
     },
 }

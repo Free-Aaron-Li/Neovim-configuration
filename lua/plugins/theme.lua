@@ -1,16 +1,17 @@
-return{
+return {
     {
         -- https://github.com/folke/tokyonight.nvim
         -- tokyonight主题
         "folke/tokyonight.nvim",
-        dependencies={
+        event = "VimEnter",
+        dependencies = {
             -- 额外补充插件
             -- https://github.com/utilyre/barbecue.nvim
             -- 页眉展示
             -- 展示当前文件位置、函数位置等
             {
                 "utilyre/barbecue.nvim",
-                dependencies={
+                dependencies = {
                     "SmiteshP/nvim-navic",
                     "nvim-tree/nvim-web-devicons", -- optional dependency
                 },
@@ -19,15 +20,15 @@ return{
             -- 状态栏
             {
                 'nvim-lualine/lualine.nvim',
-                dependencies={
+                dependencies = {
                     'nvim-tree/nvim-web-devicons',
                 },
             },
         },
         lazy = false,
         priority = 1000,
-        config=function()
-            vim.cmd[[colorscheme tokyonight-night]]
+        config = function()
+            vim.cmd [[colorscheme tokyonight-night]]
             require('barbecue').setup({
                 theme = 'tokyonight',
             })
@@ -36,7 +37,7 @@ return{
                     "nvim-tree",
                     "toggleterm",
                 },
-                options={
+                options = {
                     theme = 'tokyonight',
                 },
             })

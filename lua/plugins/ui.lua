@@ -3,6 +3,7 @@ return {
         -- buffer显示
         'akinsho/bufferline.nvim',
         version = "*",
+        event="VimEnter",
         dependencies = {
             'nvim-tree/nvim-web-devicons',
             'moll/vim-bbye',

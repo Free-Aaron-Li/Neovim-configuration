@@ -180,7 +180,7 @@ return {
                 filter_rules = {
                     include_current_win = true,
                     bo = {
-                        filetype = { "fidget", "nvim-tree" }
+                        filetype = { "fidget", "nvim-tree","telescope" }
                     }
                 }
             })
@@ -225,6 +225,8 @@ return {
         "dhruvasagar/vim-table-mode",
         event = 'VeryLazy',
         -- ft = "markdown",
+        config=function ()
+        end
     },
     {
         -- 快速跳转
@@ -241,6 +243,8 @@ return {
         "ferrine/md-img-paste.vim",
         event = 'VeryLazy',
         -- ft = "markdown",
+        config=function ()
+        end
     },
     {
         -- https://github.com/lilydjwg/fcitx.vim
